@@ -1,12 +1,31 @@
 ﻿using System;
 
-namespace GitDemo3
+class Customer
 {
-    class Program
+    string _firstname;
+    string _lastname;
+
+    public Customer(string firstname, string lastname)
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-        }
+        _firstname = firstname;
+        _lastname = lastname;
+    }
+
+    public string PrintFullName()
+    {
+        return _firstname + " " + _lastname;
+    }
+
+    ~Customer()
+    {
+        //clean-up code
+    }
+}
+class Program
+{
+    static void Main()
+    {
+        Customer c1 = new Customer("Ashok", "Kumar");
+        Console.WriteLine(c1.PrintFullName());
     }
 }
